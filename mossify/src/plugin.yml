@@ -1,0 +1,4 @@
+name: Mossify
+main: com.argo.bukkit.mossify.Mossify
+version: 1
+author: Argomirr
