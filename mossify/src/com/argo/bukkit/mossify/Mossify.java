@@ -12,14 +12,15 @@ public class Mossify extends JavaPlugin {
 
     public void onEnable() {
 	PluginManager pm = getServer().getPluginManager();
+	//pm.registerEvent(Type.BLOCK_PLACED, blockListener, Priority.Normal, this);
 	pm.registerEvent(Type.BLOCK_PLACED, blockListener, Priority.Normal, this);
 
 	PluginDescriptionFile pdf = this.getDescription();
-	System.out.println(pdf.getName() + " version " + pdf.getVersion() + "succesfully loaded.");
+	System.out.println(pdf.getName() + " revision " + pdf.getVersion() + " succesfully loaded.");
     }
     
     public void onDisable() {
 	PluginDescriptionFile pdf = this.getDescription();
-	System.out.println(pdf.getName() + " version " + pdf.getVersion() + " succesfully disabled.");
+	System.out.println(pdf.getName() + " revision " + pdf.getVersion() + " succesfully disabled.");
     }
 }

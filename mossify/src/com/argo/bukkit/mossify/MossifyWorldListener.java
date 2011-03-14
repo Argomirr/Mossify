@@ -2,6 +2,7 @@
 package com.argo.bukkit.mossify;
 
 import org.bukkit.Chunk;
+import org.bukkit.World;
 import org.bukkit.event.world.ChunkLoadEvent;
 import org.bukkit.event.world.WorldListener;
 
@@ -15,12 +16,15 @@ public class MossifyWorldListener extends WorldListener {
     @Override
     public void onChunkLoaded(ChunkLoadEvent event) {
 	Chunk chunky = event.getChunk();
+	World world = chunky.getWorld();
 	int bx = chunky.getX() << 4;
 	int bz = chunky.getZ() << 4;
 	for(int xx = bx; xx < bx+16; xx++) {
 	    for(int zz = bz; zz < bz+16; zz++) {
 		for(int yy = 0; yy < 128; yy++) {
-		    //check for blockType 'n stuff
+		    if(world.getBlockTypeIdAt(xx, yy, zz) == 4) {
+			//do stuffs
+		    }
 		}
 	    }
 	}
